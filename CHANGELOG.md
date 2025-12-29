@@ -16,5 +16,10 @@
 - MIT 许可证。
 - 完善的文档 (README.md)。
 
+## [0.0.1] - 2025-12-29
+### 新增
+- 在线演示部署：[https://jmocoder.github.io/voyager_premium/](https://jmocoder.github.io/voyager_premium/)
+- 完善 PWA 安装说明：支持手机端将网页构建为本地程序。
+
 ## [0.0.0] - 2025-12-29
 - 项目初始化。

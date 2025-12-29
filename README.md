@@ -2,6 +2,12 @@
 
 Voyager Premium 是一个现代化的智能旅行追踪与规划应用。利用 AI 驱动的功能，帮助您轻松记录足迹、规划行程，并在交互式世界地图上可视化您的旅行经历。
 
+## 🔗 在线演示
+
+👉 **立即访问：[https://jmocoder.github.io/voyager_premium/](https://jmocoder.github.io/voyager_premium/)**
+
+> **提示**：手机端直接点击上方链接，即可体验完整功能。推荐按照下方的“手机端使用说明”将其安装为本地程序，体验更佳。
+
 ## ✨ 主要功能
 
 - **交互式世界地图**：基于 D3.js 和 TopoJSON 构建的高性能地图，直观展示您的旅行足迹。
