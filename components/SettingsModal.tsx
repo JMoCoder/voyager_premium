@@ -18,7 +18,7 @@ interface SettingsModalProps {
 const SettingsModal: React.FC<SettingsModalProps> = ({ onDataChange, lang, onLanguageChange, onThemeChange, onUsernameChange }) => {
   const t = translations[lang];
   const [settings, setSettings] = useState<AppSettings>({});
-  const [activeTab, setActiveTab] = useState<'general' | 'csv' | 'webdav'>('general');
+  const [activeTab, setActiveTab] = useState<'general' | 'csv'>('general');
   const [importText, setImportText] = useState('');
   const [statusMsg, setStatusMsg] = useState<{type: 'success' | 'error', text: string} | null>(null);
 
@@ -83,14 +83,6 @@ const SettingsModal: React.FC<SettingsModalProps> = ({ onDataChange, lang, onLan
     }
   };
 
-  const handleWebDavSync = async () => {
-    if (!settings.webdavUrl || !settings.webdavUser) {
-        setStatusMsg({ type: 'error', text: t.errorCreds });
-        return;
-    }
-    setStatusMsg({ type: 'success', text: t.syncSimulated });
-  };
-
   return (
     <div className="h-full w-full flex flex-col bg-white dark:bg-slate-900">
         <div className="max-w-3xl mx-auto w-full flex-1 flex flex-col">
@@ -111,12 +103,6 @@ const SettingsModal: React.FC<SettingsModalProps> = ({ onDataChange, lang, onLan
                 className={`px-6 py-4 text-sm font-medium transition-colors ${activeTab === 'csv' ? 'text-blue-500 border-b-2 border-blue-500' : 'text-slate-500 hover:text-slate-700 dark:hover:text-slate-300'}`}
             >
                 {t.tabData}
-            </button>
-            <button 
-                onClick={() => setActiveTab('webdav')}
-                className={`px-6 py-4 text-sm font-medium transition-colors ${activeTab === 'webdav' ? 'text-blue-500 border-b-2 border-blue-500' : 'text-slate-500 hover:text-slate-700 dark:hover:text-slate-300'}`}
-            >
-                {t.tabWebDav}
             </button>
             </div>
 
