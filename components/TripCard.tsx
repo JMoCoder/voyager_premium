@@ -77,7 +77,13 @@ const TripCard: React.FC<TripCardProps> = ({ trip, onDelete, onEdit, onCardClick
     if (isGenerating || !onUpdateTrip) return;
     setIsGenerating(true);
     try {
-      const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+      const apiKey = process.env.API_KEY;
+      if (!apiKey) {
+        alert(lang === 'zh' ? '请先配置 Gemini API Key 才能使用 AI 功能。' : 'Please configure Gemini API Key to use AI features.');
+        setIsGenerating(false);
+        return;
+      }
+      const ai = new GoogleGenAI({ apiKey });
       const prompt = `A highly aesthetic, minimalist, cinematic digital art illustration of ${dest.city}, focusing on its unique landmark or vibe, moody lighting, soft pastel colors, suitable for a premium travel application cover. No text.`;
       
       const response = await ai.models.generateContent({
